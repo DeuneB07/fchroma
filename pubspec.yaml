@@ -1,0 +1,71 @@
+name: fchroma
+description: "An interactive lab for Flutter's ThemeData: Material 2 vs Material 3, ColorScheme, TextTheme, component themes and everything else that defines an app's style."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Ships Material's own translated strings (dialog buttons, date pickers,
+  # tooltips...) for ~115 locales. Without it, those stay in English no matter
+  # what your own translations say.
+  flutter_localizations:
+    sdk: flutter
+  # Required by the generated localization code.
+  intl: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+  # Runs `gen-l10n` as part of the build, turning lib/l10n/*.arb into the
+  # AppLocalizations class. Configured by l10n.yaml at the project root.
+  generate: true
+
+# Launcher icons.
+#
+# The source PNGs are not drawn by hand — they are painted by
+# `tool/generate_app_icon.dart`, so the icon is versioned as code. To change
+# it, edit that file and run:
+#
+#     flutter test tool/generate_app_icon.dart   # repaint the sources
+#     dart run flutter_launcher_icons            # resize into each platform
+#
+# The generated per-platform assets under android/ and ios/ are committed, so
+# a fresh clone builds without either step.
+flutter_launcher_icons:
+  image_path: "assets/icon/app_icon.png"
+
+  android: true
+  # Android 8+ composites two independent layers and masks them to whatever
+  # shape the launcher uses, so the wheel and the logo are supplied
+  # separately. Handing it the flat icon instead would get the artwork
+  # cropped, because the mask eats the outer ~33 %.
+  adaptive_icon_background: "assets/icon/app_icon_background.png"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
+  # Monochrome layer for Android 13+ themed icons. Reusing the foreground is
+  # right here: the system recolours it and only the silhouette matters.
+  adaptive_icon_monochrome: "assets/icon/app_icon_foreground.png"
+
+  ios: true
+  # A separate, square, full-bleed source for iOS. Apple masks the icon with
+  # its own superellipse, which reaches further into the corners than a
+  # rounded rectangle — feeding it the rounded artwork left white slivers at
+  # the corners once the alpha was flattened.
+  image_path_ios: "assets/icon/app_icon_ios.png"
+  # The App Store rejects icons with an alpha channel. The iOS source above is
+  # already opaque; this stays on as a guard against that changing.
+  remove_alpha_ios: true
+
+  web:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+    background_color: "#101014"
+    theme_color: "#6750A4"

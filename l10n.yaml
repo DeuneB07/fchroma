@@ -1,0 +1,19 @@
+# Configuration for `flutter gen-l10n`.
+#
+# The template is English: this is a public repository, so the source of truth
+# for the message keys should be readable by anyone. Spanish is a translation
+# of it, which is the reverse of how the app started out.
+arb-dir: lib/l10n
+template-arb-file: app_en.arb
+output-localization-file: app_localizations.dart
+output-class: AppLocalizations
+
+# Keeps the generated files in the repo instead of hiding them in .dart_tool.
+# That makes them reviewable, and it means the analyzer resolves them without
+# a build step on a fresh clone.
+output-dir: lib/l10n/generated
+
+# Fail the build when a locale is missing a key, rather than silently falling
+# back to the template. Catching that at build time is the whole point.
+untranslated-messages-file: l10n_missing.json
+nullable-getter: false
