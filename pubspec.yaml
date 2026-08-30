@@ -16,6 +16,8 @@ dependencies:
     sdk: flutter
   # Required by the generated localization code.
   intl: any
+  url_launcher: ^6.0.0
+  web: any
 
 dev_dependencies:
   flutter_test:

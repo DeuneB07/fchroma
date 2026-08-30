@@ -28,6 +28,7 @@
   "navTransitionsShort": "Motion",
   "navExport": "Export code",
   "navExportShort": "Code",
+  "navAbout": "About",
   "@navExport": {
     "description": "Navigation labels. The Short variants are used by the narrow navigation rail."
   },

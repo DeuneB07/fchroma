@@ -1,5 +1,8 @@
 # FChroma
 
+> **Try it!**
+> A living example of the application is available at https://fchroma.netlify.app/
+
 An interactive lab for Flutter's `ThemeData` — a sample app that walks through, property by
 property, how the visual style of a Flutter application is actually defined.
 

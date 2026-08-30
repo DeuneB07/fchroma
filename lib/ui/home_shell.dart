@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../l10n/generated/app_localizations.dart';
 import '../state/theme_lab_state.dart';
 import 'control_panel.dart';
+import 'pages/about_page.dart';
 import 'pages/color_scheme_page.dart';
 import 'pages/component_themes_page.dart';
 import 'pages/density_shape_page.dart';
@@ -34,6 +35,7 @@ enum LabSectionId {
   extensions,
   transitions,
   export,
+  about,
 }
 
 /// One section of the lab.
@@ -61,6 +63,7 @@ class LabSection {
     LabSectionId.extensions => l.navExtensions,
     LabSectionId.transitions => l.navTransitions,
     LabSectionId.export => l.navExport,
+    LabSectionId.about => l.navAbout,
   };
 
   /// Abbreviated name, for the narrow rail where space is tight.
@@ -76,6 +79,7 @@ class LabSection {
     LabSectionId.extensions => l.navExtensionsShort,
     LabSectionId.transitions => l.navTransitionsShort,
     LabSectionId.export => l.navExportShort,
+    LabSectionId.about => l.navAbout,
   };
 }
 
@@ -131,6 +135,11 @@ const List<LabSection> kSections = <LabSection>[
     builder: _transitions,
   ),
   LabSection(id: LabSectionId.export, icon: Icons.code, builder: _code),
+  LabSection(
+    id: LabSectionId.about,
+    icon: Icons.info_outlined,
+    builder: _about,
+  ),
 ];
 
 // Top-level functions so kSections can be declared `const`.
@@ -145,6 +154,7 @@ Widget _density(BuildContext c) => const DensityShapePage();
 Widget _extensions(BuildContext c) => const ExtensionsPage();
 Widget _transitions(BuildContext c) => const TransitionsPage();
 Widget _code(BuildContext c) => const GeneratedCodePage();
+Widget _about(BuildContext c) => const AboutPage();
 
 /// The app's shell: navigation + content + control panel.
 ///

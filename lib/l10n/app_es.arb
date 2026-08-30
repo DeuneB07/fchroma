@@ -25,6 +25,7 @@
   "navTransitionsShort": "Movimiento",
   "navExport": "Exportar código",
   "navExportShort": "Código",
+  "navAbout": "Información",
 
   "sections": "Secciones",
   "controlPanel": "Panel de control",

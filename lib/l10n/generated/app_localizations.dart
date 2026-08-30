@@ -236,6 +236,12 @@ abstract class AppLocalizations {
   /// **'Code'**
   String get navExportShort;
 
+  /// No description provided for @navAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get navAbout;
+
   /// No description provided for @sections.
   ///
   /// In en, this message translates to:

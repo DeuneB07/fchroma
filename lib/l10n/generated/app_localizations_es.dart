@@ -79,6 +79,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get navExportShort => 'Código';
 
   @override
+  String get navAbout => 'Información';
+
+  @override
   String get sections => 'Secciones';
 
   @override
